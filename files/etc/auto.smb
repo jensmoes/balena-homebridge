@@ -1,0 +1,1 @@
+storage -fstype=cifs,rw,username=Guest,password= ://PecanPi.lan/Storage/Homebridge

@@ -1,2 +1,0 @@
-# Backup network location
-//PecanPi.lan/Storage/Homebridge /mnt/storage cifs rw,username=Guest,password= 0 0

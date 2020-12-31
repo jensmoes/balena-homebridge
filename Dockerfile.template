@@ -2,7 +2,8 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-node:latest
 
 # dbus is for mDNS hostname access via dbus_send
 # cifs-utils is for mounting network volumes for backup
-RUN install_packages dbus cifs-utils
+# autofs is for automatically connecting to the backupdrive on demand
+RUN install_packages dbus cifs-utils autofs
 
 # Install homebridge and config UI
 RUN npm i -g --unsafe-perm homebridge homebridge-config-ui-x
@@ -12,16 +13,12 @@ RUN npm i -g homebridge-hubitat-tonesto7
 RUN npm i -g homebridge-haiku-senseme
 # Install HomeConnect 
 RUN npm i -g homebridge-homeconnect
-# Create the mount for the backup destination.
-RUN mkdir -p /mnt/storage
 # Make the homebridge directory
 RUN mkdir -p /data/homebridge/
 
-
-
-# Copy over files
 WORKDIR /usr/src
 
+# Copy over files
 COPY start.sh start.sh
 COPY files/usr/src/* /usr/src/
 COPY files/etc/* /etc/
