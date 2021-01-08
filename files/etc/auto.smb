@@ -1,1 +1,1 @@
-storage -fstype=cifs,rw,username=Guest,password= ://PecanPi.lan/Storage/Homebridge
+storage -fstype=cifs,rw,username=Guest,password= ://192.168.179.2/Storage/Homebridge
