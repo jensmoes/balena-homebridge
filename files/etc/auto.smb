@@ -1,1 +1,2 @@
+# Set the external storage location for automated backups if you have those enabled in config.json
 storage -fstype=cifs,rw,username=Guest,password= ://192.168.179.2/Storage/Homebridge

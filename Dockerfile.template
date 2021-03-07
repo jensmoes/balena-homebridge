@@ -20,7 +20,8 @@ WORKDIR /usr/src
 
 # Copy over files
 COPY start.sh start.sh
-COPY files/usr/src/* /usr/src/
+# Copy the configuraton file. Point this to where ever you have those or put them in what is already pointed to
+COPY ../homebridge-config/* /usr/src/
 COPY files/etc/* /etc/
 
 RUN chmod +x start.sh
