@@ -18,10 +18,11 @@ RUN mkdir -p /data/homebridge/
 
 WORKDIR /usr/src
 
+# Copy the secrets from .balena/secrets/, Uncomment this to bake in the secrets
+# RUN cp /run/secrets/*.json /usr/src/
 # Copy over files
 COPY start.sh start.sh
 # Copy the configuraton file. Point this to where ever you have those or put them in what is already pointed to
-COPY ../homebridge-config/* /usr/src/
 COPY files/etc/* /etc/
 
 RUN chmod +x start.sh

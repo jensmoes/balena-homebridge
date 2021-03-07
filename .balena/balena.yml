@@ -1,0 +1,9 @@
+# build-secrets:
+#   global:
+#     - source: config.json
+#       dest: config.json
+#     - source: auth.json
+#       dest: auth.json
+build-variables:
+  global:
+    - DUMMY=Just something to prevent this empty file from causing errors
