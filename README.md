@@ -5,7 +5,7 @@ It installs various other packages that I like to use such as Haiku fan support.
 Uses provided `config.json` and `auth.json` files, or input from environment/service variables.
 If you are using automated backup you can set a network location in `auto.smb` to store them off device.
 
-#Prep
+## Prep
 
 To provide configuration tokens and authentication create them in the Balena Dashboard in the variables `CONFIG_JSON` and `AUTH_JSON` and paste in the JSON data.
 
@@ -17,13 +17,13 @@ Don't forget to uncomment the `RUN` command in the `Dockerfile` to actually copy
 They will then be added to the image.
 Note: The environment variables will override any build time configuration.
 
-# Build
+## Build
 
 ```
 $ balena push homebridge
 ```
 
-# Upgrade
+## Upgrade
 
 To upgrade any of the packages push with the `nocache` option.
 ```
