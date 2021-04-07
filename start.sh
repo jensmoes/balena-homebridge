@@ -24,8 +24,12 @@ if [[ ! -z "AUTH_JSON" ]]; then
   echo ${AUTH_JSON} | cat >> auth.json
 fi
 
-# Put the homebridge directory in persistent mem
-cp /usr/src/*.json /data/homebridge/
+# Link to the config files from persistent area. 
+# Unfortunately HB needs a persistent storage to store it's state.
+# This should ideally be a proper storage device, not an SD card.
+ln -s /usr/src/config.json /data/homebridge/config.json
+ln -s /usr/src/auth.json /data/homebridge/auth.json
 
+# TODO: Make an option to provide an alternative storage path
 echo Starting homebridge
 exec homebridge --user-storage-path /data/homebridge/ > /var/log/homebridge.log
