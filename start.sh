@@ -17,11 +17,11 @@ curl -X PATCH --header "Content-Type:application/json" \
     "$BALENA_SUPERVISOR_ADDRESS/v1/device/host-config?apikey=$BALENA_SUPERVISOR_API_KEY"
 
 if [[ ! -z "CONFIG_JSON" ]]; then
-  echo ${CONFIG_JSON} | cat >> config.json
+  echo ${CONFIG_JSON} | cat > config.json
 fi
 
 if [[ ! -z "AUTH_JSON" ]]; then
-  echo ${AUTH_JSON} | cat >> auth.json
+  echo ${AUTH_JSON} | cat > auth.json
 fi
 
 # Link to the config files from persistent area. 
