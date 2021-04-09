@@ -17,6 +17,8 @@ Don't forget to uncomment the `RUN` command in the `Dockerfile` to actually copy
 They will then be added to the image.
 Note: The environment variables will override any build time configuration.
 
+The default local storage location is `/data/homebridge/`. You can change this by adding a device variable named `STORAGE_PATH` pointing to the desired location.
+
 ## Build
 
 ```
