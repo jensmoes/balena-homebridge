@@ -10,7 +10,7 @@ RUN npm i -g --unsafe-perm homebridge homebridge-config-ui-x
 # Install Plugins
 RUN npm i -g homebridge-hubitat-tonesto7
 #Install Haiku Fan Support
-RUN npm i -g homebridge-haiku-senseme
+RUN npm i -g homebridge-bigAssFans
 # Install HomeConnect 
 RUN npm i -g homebridge-homeconnect
 # Make the homebridge directory
