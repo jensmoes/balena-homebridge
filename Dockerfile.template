@@ -3,16 +3,14 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-node:latest
 # dbus is for mDNS hostname access via dbus_send
 # cifs-utils is for mounting network volumes for backup
 # autofs is for automatically connecting to the backupdrive on demand
-# git & openssl is for npm installing from git
-RUN install_packages dbus cifs-utils autofs git openssh-client
+RUN install_packages dbus cifs-utils autofs
 
 # Install homebridge and config UI
 RUN npm i -g --unsafe-perm homebridge homebridge-config-ui-x
 # Install Plugins
 RUN npm i -g homebridge-hubitat-tonesto7
 #Install Haiku Fan Support
-RUN npm i -g barkmadley/homebridge-bigAssFans
-
+RUN npm i -g homebridge-bigAssFans
 # Install HomeConnect 
 RUN npm i -g homebridge-homeconnect
 
