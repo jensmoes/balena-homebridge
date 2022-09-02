@@ -17,6 +17,8 @@ RUN npm i -g homebridge-bigAssFans
 RUN npm i -g homebridge-homeconnect
 # Install Blink
 RUN npm i -g homebridge-blink-for-home
+# Install LaCrosse
+RUN npm i -g homebridge-lacrosseview
 
 # Make the homebridge directory
 RUN mkdir -p /data/homebridge/
