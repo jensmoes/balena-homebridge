@@ -22,6 +22,8 @@ RUN npm i -g homebridge-homeconnect
 RUN npm i -g homebridge-blink-for-home
 # Install LaCrosse
 RUN npm i -g homebridge-lacrosseview
+# Install Nest support
+RUN npm install -g homebridge-nest
 
 # Make the homebridge directory
 RUN mkdir -p /data/homebridge/
