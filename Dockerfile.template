@@ -7,7 +7,8 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%
 # autofs is for automatically connecting to the backupdrive on demand
 RUN install_packages dbus cifs-utils autofs
 
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
+#Uncomment these two lines to use manual node installation
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
 apt-get install -y nodejs
 
 # Install homebridge and config UI
@@ -24,6 +25,8 @@ RUN npm i -g homebridge-blink-for-home
 RUN npm i -g homebridge-lacrosseview
 # Install Nest support
 RUN npm install -g homebridge-nest
+#Install Weather Plus
+RUN npm install -g homebridge-weather-plus
 
 # Make the homebridge directory
 RUN mkdir -p /data/homebridge/
