@@ -8,13 +8,14 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%
 RUN install_packages dbus cifs-utils autofs
 
 #Uncomment these two lines to use manual node installation
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
 apt-get install -y nodejs
 
 # Install homebridge and config UI
 RUN npm i -g --unsafe-perm homebridge homebridge-config-ui-x
 # Install Plugins
-RUN npm i -g homebridge-hubitat-tonesto7
+# Lock to 2.9.2 until homebridge 2.0 migration (adaptive ligthing not working)
+RUN npm i -g homebridge-hubitat-tonesto7@2.9.2
 #Install Haiku Fan Support
 RUN npm i -g homebridge-bigAssFans
 # Install HomeConnect 
@@ -22,7 +23,8 @@ RUN npm i -g homebridge-homeconnect
 # Install Blink
 RUN npm i -g homebridge-blink-for-home
 # Install LaCrosse
-RUN npm i -g homebridge-lacrosseview
+# Lock to 1.x util ready for homebridge 2.0
+RUN npm i -g homebridge-lacrosseview@1.2.0
 # Install Nest support
 RUN npm install -g homebridge-nest
 #Install Weather Plus
