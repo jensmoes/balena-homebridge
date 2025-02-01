@@ -8,7 +8,7 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%
 RUN install_packages dbus cifs-utils autofs
 
 #Uncomment these two lines to use manual node installation
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
 apt-get install -y nodejs
 
 # Install homebridge and config UI
@@ -23,12 +23,11 @@ RUN npm i -g homebridge-homeconnect
 # Install Blink
 RUN npm i -g homebridge-blink-for-home
 # Install LaCrosse
-# Lock to 1.x util ready for homebridge 2.0
-RUN npm i -g homebridge-lacrosseview@1.2.0
+RUN npm i -g homebridge-lacrosseview
 # Install Nest support
 RUN npm install -g homebridge-nest
-#Install Weather Plus
-RUN npm install -g homebridge-weather-plus
+#Install Enphase Envoy
+RUN npm i -g homebridge-enphase-envoy 
 
 # Make the homebridge directory
 RUN mkdir -p /data/homebridge/
